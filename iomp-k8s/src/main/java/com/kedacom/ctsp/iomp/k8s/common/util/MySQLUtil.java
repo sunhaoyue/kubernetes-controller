@@ -18,7 +18,7 @@ import java.util.List;
 @Slf4j
 public class MySQLUtil {
 
-    public static final String DB_URL = "jdbc:mysql://%s:%s/iomp?useUnicode=true&characterEncoding=utf-8&serverTimezone=UTC";
+    public static final String DB_URL = "jdbc:mysql://%s:%s/iomp?useUnicode=true&characterEncoding=utf-8&serverTimezone=UTC&useSSL=false";
     public static final String DB_USERNAME = "iomp_write";
     public static final String DB_PASSWORD = "83Ac0d76b737a8d2@";
 

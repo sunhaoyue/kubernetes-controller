@@ -106,7 +106,7 @@ public class Application {
         String config = YamlUtil.convertObjToYaml1(dbvo);
         String saveConfigFilePath = configFilePath + "264.yaml";
         downloadUsingStream(config, saveConfigFilePath);
-        System.out.println("保存的升级配置数据源文件路径:" + saveConfigFilePath);
+        System.out.println("Saved upgrade configuration data source file path:" + saveConfigFilePath);
 
         for (ClusterEntity entity : clusterEntities) {
             // 不是运行中的主机 24x部署这样的：
@@ -162,7 +162,7 @@ public class Application {
         String content = YamlUtil.convertObjToYaml1(clusterAndNode);
         String saveFilePath = directoryPath + "cluster-info.yaml";
         downloadUsingStream(content, saveFilePath);
-        System.out.println("保存的文件路径:" + saveFilePath);
+        System.out.println("Saved file path:" + saveFilePath);
     }
 
     public static String getClusterPath(String clusterId) {
@@ -197,9 +197,9 @@ public class Application {
         try {
             boolean fileCreated = file.createNewFile();
             if (fileCreated) {
-                System.out.println("文件创建成功！");
+                System.out.println("File created successfully!");
             } else {
-                System.out.println("文件已存在，无需创建。");
+                System.out.println("The file already exists and does not need to be created.");
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -207,7 +207,7 @@ public class Application {
         try (OutputStream outputStream = new FileOutputStream(file)) {
             byte[] contentBytes = content.getBytes(StandardCharsets.UTF_8);
             outputStream.write(contentBytes);
-            System.out.println("集群信息已成功保存到文件！");
+            System.out.println("Cluster information successfully saved to file!");
         } catch (IOException e) {
             e.printStackTrace();
         }
